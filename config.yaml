@@ -1,0 +1,6 @@
+## configure this with the subread input file that includes kinetic info!
+Outputfolder: "."
+ccs_lowq_filter: "0.88"
+ccs_lowq_num_threads: 16
+split_into_n_chunks: 10
+checkpoint_file: "/gpfs/project/projects/bmfz_gtl/software/deepconsensus_snake/checkpoint"
