@@ -1,0 +1,80 @@
+{
+    "__default__" :
+    {
+      "account" : "HiSeq3000",
+      "queue" : "workq",
+      "nodes" : 1,
+      "time" : "0:59:59",
+      "mem" : "8GB",
+      "ncpus" : "12",
+      "arch" : "icelake",
+      "ngpus" : "0",
+      "error" : "clusterLogs/{rule}.{jobid}.errors",
+      "output" : "clusterLogs/{rule}.{jobid}.output"
+    },
+    "index_subreads" :
+    {
+      "account" : "HiSeq3000",
+      "queue" : "workq",
+      "nodes" : 1,
+      "time" : "02:59:59",
+      "mem" : "12GB",
+      "ncpus" : "12",
+      "arch" : "icelake",
+      "ngpus" : "0",
+      "error" : "index_subreads.{jobid}.errors",
+      "output" : "index_subreads.{jobid}.output"
+    },
+    "ccs_lowq" :
+    {
+      "account" : "HiSeq3000",
+      "queue" : "workq",
+      "nodes" : 1,
+      "time" : "5:59:59",
+      "mem" : "24GB",
+      "ncpus" : "12",
+      "arch" : "icelake",
+      "ngpus" : "0",
+      "error" : "ccs_lq.{jobid}.errors",
+      "output" : "ccs_lq.{jobid}.output"
+    },
+    "map_lowq_to_subreads" :
+    {
+      "account" : "HiSeq3000",
+      "queue" : "workq",
+      "nodes" : 1,
+      "time" : "3:59:59",
+      "mem" : "32GB",
+      "ncpus" : "12",
+      "arch" : "icelake",
+      "ngpus" : "0",
+      "error" : "actc.{jobid}.errors",
+      "output" : "actc.{jobid}.output"
+    },
+    "run_deep" :
+    {
+      "account" : "HiSeq3000",
+      "queue" : "workq",
+      "nodes" : 1,
+      "time" : "21:59:59",
+      "mem" : "64GB",
+      "ncpus" : "16",
+      "ngpus" : "0",
+      "arch" : "icelake",
+      "error" : "deepconsensus.{jobid}.errors",
+      "output" : "deepconsensus.{jobid}.output"
+    },
+    "cat_fastqs" :
+    {
+      "account" : "HiSeq3000",
+      "queue" : "workq",
+      "nodes" : 1,
+      "time" : "0:29:59",
+      "mem" : "12GB",
+      "ncpus" : "2",
+      "arch" : "icelake",
+      "ngpus" : "0",
+      "error" : "cat_fastqs.{jobid}.errors",
+      "output" : "cat_fastqs.{jobid}.output"
+    }
+}
