@@ -1,0 +1,15 @@
+name: deepconsensus_software_env
+#channels:
+#  - nodefaults
+#  - http://conda.repo.test.hhu.de/conda-forge
+#  - http://conda.repo.test.hhu.de/bioconda
+#  - http://conda.repo.test.hhu.de/main
+ 
+dependencies:
+  - pbccs=6.4.0
+  - pyyaml=6.0
+  - fastqc
+  - pbtk=3.1.0
+  - actc
+  - perl
+  - lima

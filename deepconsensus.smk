@@ -73,7 +73,6 @@ rule ccs_lowq:
         "deepconsensus_software_env.yml"
     shell:
         """
-        echo {params.test2}
         ccs {input.input_subreads_bam} --min-rq={params.min_qual} -j {params.n_threads} --chunk=`echo {params.test2} | sed 's/-of-/\//'` {output.output_files}
         """
 
@@ -128,4 +127,18 @@ rule cat_fastqs:
     shell:
         """
         cat {input} >> {output}
+        """
+        
+rule demux:
+    input:
+        fastq_w_barc = "{name}_deepconsensus.fastq"
+    params:
+        barcode_file = config["barcode_file"]
+    output:
+        demuxed_fastq = "{name}_deepconsensus_demultiplexed.fastq"
+    conda:
+        "deepconsensus_software_env.yml"
+    shell:
+        """
+        lima {input} {params.barcode_file} {output}
         """

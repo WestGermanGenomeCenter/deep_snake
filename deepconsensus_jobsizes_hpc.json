@@ -12,6 +12,19 @@
       "error" : "clusterLogs/{rule}.{jobid}.errors",
       "output" : "clusterLogs/{rule}.{jobid}.output"
     },
+    "demux" :
+    {
+      "account" : "HiSeq3000",
+      "queue" : "workq",
+      "nodes" : 1,
+      "time" : "02:59:59",
+      "mem" : "24GB",
+      "ncpus" : "8",
+      "arch" : "icelake",
+      "ngpus" : "0",
+      "error" : "demultiplex.{jobid}.errors",
+      "output" : "demultiplex.{jobid}.output"
+    },
     "index_subreads" :
     {
       "account" : "HiSeq3000",
@@ -56,7 +69,7 @@
       "account" : "HiSeq3000",
       "queue" : "workq",
       "nodes" : 1,
-      "time" : "21:59:59",
+      "time" : "11:59:59",
       "mem" : "64GB",
       "ncpus" : "16",
       "ngpus" : "0",

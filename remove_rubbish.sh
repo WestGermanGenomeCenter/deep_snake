@@ -1,7 +1,16 @@
 rm *.errors
 rm *.output
-rm *-of-*
+rm *-of*.bam
+rm *-of*.pbi
+rm *-of*.gz
+rm *-of*.fastq
+rm *-of*.log
+rm *-of*.json
+rm *-of*.txt
+rm *-of*.fasta
 rm *.pbi
-rm -r *fastqc*
-rm multiqc*
 rm fastp*
+rm *.html
+rm *.zip
+rm *.csv
+rm *lima*
