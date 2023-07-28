@@ -13,3 +13,6 @@ dependencies:
   - actc
   - perl
   - lima
+  - fastqc
+  - fastp
+  - multiqc

@@ -141,4 +141,7 @@ rule demux:
     shell:
         """
         lima {input} {params.barcode_file} {output}
+        fastqc {output}
+        fastp -i {output}
+        multiqc .
         """
