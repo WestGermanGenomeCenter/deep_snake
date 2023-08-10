@@ -48,7 +48,7 @@ rule index_subreads:
     conda:
         "deepconsensus_software_env.yml"
     wildcard_constraints:
-        name = "m\d+_\d+_\d+\.subreads"
+        name = "m\d+Ue{0,1}_\d+_\d+\.subreads"# compatable with sequelII and sequelIIe now 
     shell:
         """
         pbindex {input}
@@ -123,7 +123,7 @@ rule cat_fastqs:
         final_fastq = "{name}_deepconsensus.fastq"
     wildcard_constraints:
         shard_of = "-of-{1,1}" ,
-        name = "m\d+_\d+_\d+\.subreads"
+        name = "m\d+Ue{0,1}_\d+_\d+\.subreads"
     shell:
         """
         cat {input} >> {output}
@@ -143,5 +143,5 @@ rule demux:
         lima {input} {params.barcode_file} {output}
         fastqc {output}
         fastp -i {output}
-        multiqc .
+        multiqc . 
         """
