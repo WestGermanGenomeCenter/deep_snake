@@ -3,5 +3,6 @@ Outputfolder: "."
 ccs_lowq_filter: "0.88"
 ccs_lowq_num_threads: 16
 split_into_n_chunks: 20
+batch_zmws: 100
 checkpoint_file: "/gpfs/project/projects/bmfz_gtl/software/deepconsensus_snake/checkpoint"
 barcode_file: "/gpfs/project/projects/bmfz_gtl/software/deepconsensus_snake/pacbio_barcodes.fasta"
