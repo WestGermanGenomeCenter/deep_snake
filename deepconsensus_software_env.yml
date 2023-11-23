@@ -10,7 +10,7 @@ dependencies:
   - pyyaml=6.0
   - fastqc
   - pbtk=3.1.0
-  - actc
+  - actc=0.2.0
   - perl
   - lima
   - fastqc

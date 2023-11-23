@@ -101,7 +101,8 @@ rule run_deep:
         checkpoint_file = config["checkpoint_file"],
         mapped_bam = expand("{{name}}_{{shard_of}}_ccs_lq_mapped_to_subreads.bam"),
         ccs_lq = expand("{{name}}_{{shard_of}}_ccs_lq.bam"),
-        logfile = expand("{{name}}_{{shard_of}}_deepconsensus_logfile.log")
+        logfile = expand("{{name}}_{{shard_of}}_deepconsensus_logfile.log"),
+        zmw_batchsize = config ["batch_zmws"]
     threads:
         config["ccs_lowq_num_threads"]      
 
@@ -113,7 +114,7 @@ rule run_deep:
     shell:
        """
        module load DeepConsensus &>{params.logfile}
-       nice deepconsensus run --subreads_to_ccs={params.mapped_bam} --ccs_bam={params.ccs_lq} --checkpoint={params.checkpoint_file} --output={output} --batch_zmws 1000 --cpus={threads} &>{params.logfile}
+       deepconsensus run --subreads_to_ccs={params.mapped_bam} --ccs_bam={params.ccs_lq} --checkpoint={params.checkpoint_file} --output={output} --batch_size=512 --batch_zmws {params.zmw_batchsize} --cpus={threads} &>{params.logfile}
        """
 
 rule cat_fastqs:
