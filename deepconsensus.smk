@@ -101,8 +101,8 @@ rule run_deep:
         checkpoint_file = config["checkpoint_file"],
         mapped_bam = expand("{{name}}_{{shard_of}}_ccs_lq_mapped_to_subreads.bam"),
         ccs_lq = expand("{{name}}_{{shard_of}}_ccs_lq.bam"),
-        logfile = expand("{{name}}_{{shard_of}}_deepconsensus_logfile.log"),
-        zmw_batchsize = config ["batch_zmws"]
+        zmw_batchsize = config["batch_zmws"],
+        logfile = expand("{{name}}_{{shard_of}}_deepconsensus_logfile.log")
     threads:
         config["ccs_lowq_num_threads"]      
 
